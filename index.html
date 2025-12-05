@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alessandro Gobbetti</title>
+  <meta name="description"
+    content="Portfolio of Alessandro Gobbetti, a Computer Science graduate specializing in Machine Learning, Federated Learning, and Full-Stack Development.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alessandro Gobbetti - Portfolio">
+  <meta property="og:description" content="Explore the projects, publications, and research of Alessandro Gobbetti.">
+  <meta property="og:image" content="media/me.png">
+  <script>
+    (function setInitialTheme() {
+      try {
+        var root = document.documentElement;
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') {
+          root.classList.add('dark-mode');
+          root.classList.remove('light-mode');
+        } else {
+          root.classList.add('light-mode');
+          root.classList.remove('dark-mode');
+        }
+      } catch (err) {
+        // ignore storage/matchMedia errors and allow default styles
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="media/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="media/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="media/favicon.png">
+</head>
+
+<body>
+
+  <!-- Simple Header -->
+  <header>
+    <h1>Alessandro Gobbetti</h1>
+  </header>
+  <button id="theme-toggle" aria-label="Toggle dark mode">
+    <i class="fa-solid fa-moon" id="theme-icon"></i>
+  </button>
+
+  <main>
+    <!-- Sidebar -->
+    <aside>
+      <img src="media/me.png" alt="Profile photo">
+      <div class="profile-card-content">
+        <h3 class="side-name">Alessandro Gobbetti</h3>
+        <nav class="info">
+          <ul class="contact-list">
+
+            <li class="contact-item contact-item--static">
+              <div class="contact-row" role="presentation">
+                <span class="icon" aria-hidden="true"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                <span class="contact-text">Switzerland</span>
+              </div>
+            </li>
+            <li class="contact-item">
+              <a class="contact-row" href="mailto:ale.gobbetti.work@gmail.com" id="email-link">
+                <span class="icon" aria-hidden="true"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                <span class="contact-text">Email</span>
+              </a>
+            </li>
+
+
+            <li class="contact-item">
+              <a class="contact-row" href="https://www.linkedin.com/in/alessandro-gobbetti-22217239a/" target="_blank"
+                rel="noopener noreferrer">
+                <span class="icon" aria-hidden="true"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></span>
+                <span class="contact-text">LinkedIn</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <a class="contact-row" href="https://github.com/Alessandro-Gobbetti" target="_blank"
+                rel="noopener noreferrer">
+                <span class="icon" aria-hidden="true"><i class="fa-brands fa-github" aria-hidden="true"></i></span>
+                <span class="contact-text">GitHub</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <a class="contact-row" href="https://orcid.org/0009-0004-4330-5063" target="_blank"
+                rel="noopener noreferrer">
+                <span class="icon" aria-hidden="true"><i class="fa-solid fa-id-badge" aria-hidden="true"></i></span>
+                <span class="contact-text">ORCID</span>
+              </a>
+            </li>
+            <li class="contact-item">
+              <a class="contact-row" href="media/cv.pdf" target="_blank" rel="noopener noreferrer">
+                <span class="icon" aria-hidden="true"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></span>
+                <span class="contact-text">Curriculum Vitae</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+    </aside>
+
+    <!-- Main content -->
+    <section class="content">
+      <section id="about">
+        <h2 class="animate">About Me</h2>
+        <p class="intro">Computer science graduate with a BSc (2023) and MSc (2025) from Università della Svizzera
+          Italiana (USI), early stage research experience in machine learning, federated learning, and human activity
+          recognition, well rounded technical skills across the CS spectrum, and experience in leading development
+          projects.</p>
+      </section>
+
+      <section id="publications">
+        <h2 class="animate">Publications</h2>
+        <p class="intro">My work resulted in academic publications on federated learning, human activity recognition,
+          and privacy-aware machine learning for mobile and wearable devices.</p>
+
+        <div class="project-card">
+          <div class="project-media">
+            <img class="is-active" src="media/FedMMA_prev.png" alt="FedMMA-HAR Publication">
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3>FedMMA-HAR: Federated Learning for Human Activity Recognition With Missing Modalities Using Head-Worn
+                Wearables</h3>
+              <p class="project-date">Oct.-Dec. 2024</p>
+            </div>
+            <p class="project-subtitle authors"><strong>Alessandro Gobbetti</strong>, Martin Gjoreski, Hristijan
+              Gjoreski, Nicholas Lane, Marc Langheinrich</p>
+            <p>Follow-up of my Bachelor thesis. Proposes a missing-modality-agnostic federated learning for human
+              activity recognition on head-worn wearables; robust to missing sensors.</p>
+            <p><strong>Published in:</strong> IEEE Pervasive Computing, 23(4): 40-49</p>
+            <a href="https://doi.org/10.1109/MPRV.2024.3475473" target="_blank" rel="noopener noreferrer">Publication
+              →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-media">
+            <img class="is-active" src="media/workload_prev.png" alt="Cognitive Workload Estimation Publication">
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3>Federated Learning for Privacy-aware Cognitive Workload Estimation</h3>
+              <p class="project-date">Dec. 2023</p>
+            </div>
+            <p class="project-subtitle authors">Dario Fenoglio, Daniel Josifovski, <strong>Alessandro Gobbetti</strong>,
+              Mattias Formo, Hristijan Gjoreski, Martin Gjoreski, and Marc Langheinrich</p>
+
+            <p>Proposes a federated learning approach for cognitive workload estimation using wearable sensors,
+              achieving performance comparable to centralized models while preserving data privacy.</p>
+            <p><strong>Published in:</strong> Proc. International Conference on Mobile and Ubiquitous Multimedia (MUM
+              '23)</p>
+            <a href="https://doi.org/10.1145/3626705.3627783" target="_blank" rel="noopener noreferrer">Publication
+              →</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="thesis">
+        <h2 class="animate">Theses</h2>
+        <p class="intro">Academic theses showcasing my research in machine learning and federated learning and my
+          development skills on local and distributed systems.</p>
+
+        <div class="project-card project-card--cycle project-card--grade project-card--award"
+          data-cycle-images="media/master_mtl.png, media/master_tsne.png, media/master_obj.png"
+          data-cycle-interval="5000">
+          <div class="grade-badge" aria-label="Grade: 10 out of 10">10/10</div>
+          <div class="project-media fit-contain nomargin">
+            <img class="is-active" src="media/master_mtl.png" alt="Master Thesis">
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3>Multi-Task Self-Supervised Methods for Label-Efficient Learning</h3>
+              <p class="project-date">Sep. 2025</p>
+            </div>
+            <p class="project-subtitle">Combining Contrastive and Pretext-Based Learning for Eﬀective Encoders from
+              Unlabeled and Federated Data in Human Activity Recognition and Beyond</p>
+
+            <p>Master's thesis on Multi-Task Self-Supervised Learning for label-efficient learning. Modular PyTorch
+              framework combining contrastive + pretext tasks with dynamic loss weighting, and centralized/federated
+              training (HAR/STL-10) to learn compact, robust representations.</p>
+            <p class="institution"><strong>Institution:</strong> <span class="institution-full">Università della
+                Svizzera Italiana (USI)</span><span class="institution-short">USI</span> <a class="verify-diploma"
+                href="https://www.usi.ch/en/authentication/CXZFT" target="_blank" rel="noopener noreferrer"
+                aria-label="Verify authenticity of Master diploma"><i class="fa-solid fa-university verify-icon"
+                  aria-hidden="true"></i><span class="verify-text">Verify diploma</span></a></p>
+            <a href="media/AlessandroGobbetti_MastersThesis.pdf" target="_blank" rel="noopener noreferrer">Read Thesis
+              →</a>
+          </div>
+        </div>
+
+        <div class="project-card project-card--cycle project-card--grade"
+          data-cycle-images="media/bachelorsthesis1.png, media/bachelorsthesis2.png" data-cycle-interval="5000">
+          <div class="grade-badge" aria-label="Grade: 10 out of 10">10/10</div>
+          <div class="project-media">
+            <img class="is-active" src="media/bachelorsthesis1.png" alt="Bachelor Thesis">
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <h3>Multimodal Federated Learning for Sensor Data</h3>
+              <p class="project-date">Jul. 2023</p>
+            </div>
+            <p>Bachelor thesis on federated learning for multimodal sensor data, focusing on privacy-preserving and
+              robust techniques to handle missing modalities.</p>
+            <p class="institution"><strong>Institution:</strong> <span class="institution-full">Università della
+                Svizzera Italiana (USI)</span><span class="institution-short">USI</span> <a class="verify-diploma"
+                href="https://www.usi.ch/en/authentication/CESZZ" target="_blank" rel="noopener noreferrer"
+                aria-label="Verify authenticity of Bachelor diploma"><i class="fa-solid fa-university verify-icon"
+                  aria-hidden="true"></i><span class="verify-text">Verify diploma</span></a></p>
+            <a href="media/AlessandroGobbetti_BachelorsThesis.pdf" target="_blank" rel="noopener noreferrer">Read Thesis
+              →</a>
+          </div>
+        </div>
+        <section id="projects">
+          <h2 class="animate">Projects</h2>
+          <p class="intro">Selected personal and academic projects covering as different subjects as machine learning,
+            web development, mobile apps, robotics, visual computing and computational fabrication. Projects include
+            individual and collaborative work demonstrating a range of skills and technologies. For most of the
+            collaborative projects, I acted as team leader.</p>
+
+          <div class="project-card project-card--cycle project-card--grade project-card--award"
+            data-cycle-images="media/master_tsne.png, media/master_obj.png, media/master_mtl.png"
+            data-cycle-interval="5000">
+            <div class="project-media fit-contain nomargin">
+              <img class="is-active" src="media/master_tsne.png" alt="Master Thesis">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>MTSSL: Multi-Task Self-Supervised Methods for Label-Efficient Learning</h3>
+                <p class="project-date">Sep. 2025</p>
+              </div>
+
+              <p>Code for my Master's thesis on Multi-Task Self-Supervised Learning for label-efficient learning.
+                Modular PyTorch framework combining contrastive + pretext tasks with dynamic loss weighting, and
+                centralized/federated training (HAR/STL-10) to learn compact, robust representations.</p>
+              <a href="https://github.com/Alessandro-Gobbetti/MTSSL_for_Label-Efficient_Learning" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-media">
+              <img class="is-active" src="media/image.png" alt="Swiss Insurance Chatbot">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Swiss Insurance Chatbot</h3>
+                <p class="project-date">Jan. 2025</p>
+              </div>
+              <p>Retrieval-augmented chatbot that answers Swiss health insurance questions using a vector database and
+                large language model. The system integrates semantic embeddings with FAISS vector storage to index
+                insurance documents, accessible through Streamlit web interface, Jupyter notebooks, and voice
+                conversation with speech-to-text transcription and text-to-speech synthesis. User queries retrieve
+                contextually relevant passages through semantic search, fed into a LangChain prompt template that
+                grounds LLM responses with cited document sources and relevance scores.</p>
+              <a href="https://github.com/tornikeo/swiss-insurance-chatbot" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-media">
+              <img class="is-active" src="media/crowd-map.png" alt="Crowd Mapping">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Crowd Mapping</h3>
+                <p class="project-date">Nov.-Dec. 2024</p>
+              </div>
+              <p>Arduino-based sensor network that tracks noise pollution and crowd density across urban spaces. The
+                system consists of several sensor nodes that collect data using camera and sound sensors to monitor
+                environmental conditions and transmit the information to a central server together with GPS
+                coordinates and timestamp for real-time mapping and analysis. The images captured by the camera
+                sensors are processed using computer vision techniques to estimate crowd and traffic density.</p>
+              <a href="https://github.com/Alessandro-Gobbetti/CrowdMapping" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card project-card--cycle"
+            data-cycle-images="media/USIMaps1.png, media/USIMaps2.png, media/USIMaps3.png, media/USIMaps4.png"
+            data-cycle-interval="4000">
+            <div class="project-media">
+              <img class="is-active" src="media/USIMaps1.png" alt="USIMaps">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>USIMaps</h3>
+                <p class="project-date">Oct.-Dec. 2024</p>
+              </div>
+              <p>Android navigation app for USI campus with QR code scanning, voice commands, offline maps, and
+                crowd-sourced map extension. Features real-time navigation, camera integration, and Gemini API
+                assistance.</p>
+              <a href="https://github.com/Alessandro-Gobbetti/MWC-project" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card project-card--cycle"
+            data-cycle-images="media/make-it-stand1.png, media/make-it-stand2.png" data-cycle-interval="2000">
+            <div class="project-media fit-contain">
+              <img src="media/make-it-stand1.png" alt="Make it Stand render" class="cycle-img is-active">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Make it Stand</h3>
+                <p class="project-date">May-Jun. 2024</p>
+              </div>
+              <p>A computational fabrication tool that stabilizes 3D shapes by voxelizing an input OBJ mesh and
+                carving interior voxels to shift the center of mass over the support region. It voxelizes the model
+                using multi-direction ray casting with Fibonacci sphere sampling and jitter, extracts the lowest voxel
+                layer as a base, computes its convex hull via Graham scan, and repeatedly recomputes the barycenter
+                while removing interior voxels farthest along a semiplane opposite the hull to migrate mass. If
+                carving fails to achieve balance (barycenter inside projected convex hull), it dilates the base
+                outward in the barycenter direction and rechecks stability, then exports the final voxel configuration
+                as OBJ artifacts.</p>
+              <a href="https://github.com/Alessandro-Gobbetti/Make-It-Stand" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-media">
+              <video class="is-active project-video" src="media/maze-solver.mp4" autoplay loop muted playsinline
+                aria-label="Robotics Maze Solver demo" style="height:100%;width:100%;display:block;"></video>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Robotics Maze Solver</h3>
+                <p class="project-date">May 2024</p>
+              </div>
+              <p>Thymio robot simulation that completes a maze using flood-fill path planning and sensor-driven
+                navigation. A dynamically sized grid stores wall bitmasks and distance costs, incrementally updated
+                from either camera-based occupancy extraction or proximity sensors before flood-fill recomputes
+                goal-oriented distances. Mirroring Micromouse phases, the controller (sense → update → propagate →
+                select) first reaches the goal, then returns to start while exploring more unknown cells, then
+                performs an optimized speed run using the cached minimal path without further full-map recomputation.
+              </p>
+              <a href="https://github.com/Alessandro-Gobbetti/Robotics-Maze-Solver" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card project-card--cycle project-card--award"
+            data-cycle-images="media/render1.png, media/render2.gif" data-cycle-interval="5000">
+            <div class="award-badge" aria-label="1st Place USI Rendering Competition">1st Place<br>USI Rendering
+              Competition</div>
+            <div class="project-media">
+              <img class="is-active" src="media/render2.gif" alt="Raytracer">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Raytracer</h3>
+                <p class="project-date">Dec. 2022</p>
+              </div>
+              <p>
+                A high-performance C++ raytracer awarded first place in the USI rendering competition. The system
+                implements physically based lighting and materials, combining tile-based OpenMP parallelism with an
+                AABB tree acceleration structure for efficient triangle mesh intersection. It supports
+                roughness-driven BRDFs, multi-map texturing (diffuse, normal, roughness, displacement), procedural
+                texture generation, and reflective and refractive materials. The hierarchical acceleration pipeline
+                and extensive parallelization enable fast rendering of complex scenes while maintaining accurate
+                recursive reflection and refraction.</p>
+              <a href="https://github.com/cerfedino/ComputerGraphics" target="_blank" rel="noopener noreferrer">GitHub
+                →</a>
+            </div>
+          </div>
+
+          <div class="project-card project-card--cycle"
+            data-cycle-images="media/IR_homepage.png, media/IR_resultspage.png" data-cycle-interval="5000">
+            <div class="project-media fit-contain nomargin">
+              <img class="is-active" src="media/IR_homepage.png" alt="Information Retrieval System">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Information Retrieval System</h3>
+                <p class="project-date">Sep.-Dec. 2022</p>
+              </div>
+              <p>Search and discovery platform with custom ranking and filtering to explore content creators, built on
+                a Python Scrapy crawler that aggregates creator data from Patreon, Ko-fi, and SubscribeStar into a
+                Solr search index. The Vue.js frontend queries a Node.js backend API to deliver faceted search results
+                ranked by custom scoring algorithms, enabling users to discover creators through advanced filtering by
+                category, engagement metrics, and performance indicators. Results are personalized based on user
+                preferences and interaction history.</p>
+              <a href="https://github.com/Alessandro-Gobbetti/IR" target="_blank" rel="noopener noreferrer">GitHub
+                →</a>
+            </div>
+          </div>
+
+          <div class="project-card project-card--video-cycle"
+            data-cycle-videos="media/devinecodemy1.mp4, media/devinecodemy2.mp4, media/devinecodemy3.mp4">
+            <div class="project-media">
+              <video class="is-active project-video" muted playsinline aria-label="Devine Codemy demo"
+                style="height:100%;width:100%;display:block;"></video>
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Devine Codemy</h3>
+                <p class="project-date">Feb.-Jun. 2022</p>
+              </div>
+              <p>Led a 14-person team to build an educational web app that teaches programming fundamentals through
+                interactive Blockly exercises and real-time 3D animations. Learners create programs using Blockly's
+                drag-and-drop interface, which are first validated and executed on the backend to ensure correctness
+                and safety. The resulting instruction sequence is then animated by an on-screen robot using a Three.js
+                pipeline that visually mirrors the program's logic.</p>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="project-card project-card--cycle" data-cycle-images="media/dox_docs.png, media/dox_edit.png"
+            data-cycle-interval="5000">
+            <div class="project-media fit-contain nomargin">
+              <img class="is-active" src="media/dox_docs.png" alt="DoX">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>DoX</h3>
+                <p class="project-date">Dec. 2021</p>
+              </div>
+              <p>Collaborative text editor web application featuring real-time synchronization and sharing tools.
+                Built with Express.js and Node.js on the backend, it uses ProseMirror with operational transformation
+                to handle concurrent editing while keeping documents in sync. Socket.IO manages real-time
+                communication between clients, MongoDB stores documents and user data, and Passport.js handles
+                authentication. When users edit, changes flow through WebSockets to the server, get applied to the
+                document, and broadcast instantly to other collaborators.</p>
+              <a href="https://github.com/cerfedino/DoX" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card project-card--cycle"
+            data-cycle-images="media/cellarium.png, media/cellarium_icon.png" data-cycle-interval="5000">
+            <div class="project-media fit-contain nomargin">
+              <img class="is-active" src="media/cellarium.png" alt="Cellarium">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>Cellarium</h3>
+                <p class="project-date">Feb.-Jun. 2021</p>
+              </div>
+              <p>Java-based spreadsheet application with formula evaluation, validation, and persistent storage. The
+                spreadsheet stores cells in a HashMap with formulas represented as Abstract Syntax Trees. When a cell
+                is updated, dependent cells are automatically marked for recalculation. Supported operations include
+                basic arithmetic, trigonometric functions (SIN, COS, TAN), and range operations (SUM, AVERAGE, MIN,
+                MAX, COUNT). The system detects circular references during evaluation. Data can be saved in a custom
+                <code>.cellarium</code> format or exported as CSV, with full undo/redo support through state
+                snapshots. Both text-based and graphical interfaces are available.
+              </p>
+              <a href="https://github.com/Alessandro-Gobbetti/Cellarium" target="_blank"
+                rel="noopener noreferrer">GitHub →</a>
+            </div>
+          </div>
+        </section>
+      </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      const root = document.documentElement;
+
+      // Check for saved theme preference or default to system preference
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      function setTheme(theme) {
+        if (theme === 'dark') {
+          root.classList.add('dark-mode');
+          root.classList.remove('light-mode');
+          themeIcon.className = 'fa-solid fa-sun';
+        } else {
+          root.classList.add('light-mode');
+          root.classList.remove('dark-mode');
+          themeIcon.className = 'fa-solid fa-moon';
+        }
+        localStorage.setItem('theme', theme);
+      }
+
+      // Initialize theme
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else if (prefersDark) {
+        setTheme('dark');
+      } else {
+        setTheme('light');
+      }
+
+      // Toggle theme on button click
+      // Toggle theme on button click
+      // Toggle theme on button click
+      themeToggle.addEventListener('click', function () {
+        const currentTheme = root.classList.contains('dark-mode') ? 'dark' : 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        function triggerHeadingsAnimation() {
+          const headings = document.querySelectorAll('.content h2');
+          headings.forEach(function (h) {
+            h.classList.remove('animate');
+            void h.offsetWidth; // Force reflow
+            h.classList.add('animate');
+          });
+        }
+
+        if (!document.startViewTransition) {
+          setTheme(newTheme);
+          triggerHeadingsAnimation();
+          return;
+        }
+
+        document.startViewTransition(() => {
+          setTheme(newTheme);
+          triggerHeadingsAnimation();
+        });
+      });
+
+      // Handle video cycling
+      const videoCards = document.querySelectorAll('.project-card--video-cycle[data-cycle-videos]');
+      videoCards.forEach(function (card) {
+        const media = card.querySelector('.project-media');
+        if (!media) return;
+
+        const videos = card.dataset.cycleVideos
+          .split(',')
+          .map(function (src) { return src.trim(); })
+          .filter(Boolean);
+
+        if (videos.length === 0) return;
+
+        const primary = media.querySelector('video');
+        if (!primary) return;
+
+        primary.classList.add('cycle-video', 'is-active', 'is-foreground');
+        primary.dataset.cycleSrc = videos[0];
+
+        const buffer = document.createElement('video');
+        buffer.className = 'cycle-video project-video';
+        buffer.muted = true;
+        buffer.playsInline = true;
+        buffer.setAttribute('aria-hidden', 'true');
+        buffer.style.cssText = 'height:100%;width:100%;display:block;';
+        media.appendChild(buffer);
+
+        const fadeDuration = getFadeDurationMs(primary);
+
+        const state = {
+          activeVideo: primary,
+          inactiveVideo: buffer,
+          index: 0,
+          pendingFade: null
+        };
+
+        function playNext() {
+          const nextIndex = (state.index + 1) % videos.length;
+          const nextSrc = videos[nextIndex];
+          const incoming = state.inactiveVideo;
+          const outgoing = state.activeVideo;
+
+          const finalizeSwap = function () {
+            if (state.pendingFade) {
+              window.clearTimeout(state.pendingFade);
+              state.pendingFade = null;
+            }
+
+            incoming.classList.remove('is-active');
+            incoming.classList.add('is-foreground');
+            outgoing.classList.remove('is-foreground');
+
+            const activateIncoming = function () {
+              incoming.classList.add('is-active');
+
+              if (document.hidden) {
+                outgoing.classList.remove('is-active');
+                outgoing.pause();
+                state.pendingFade = null;
+              } else {
+                state.pendingFade = window.setTimeout(function () {
+                  outgoing.classList.remove('is-active');
+                  outgoing.pause();
+                  state.pendingFade = null;
+                }, fadeDuration);
+              }
+            };
+
+            if (document.hidden) {
+              activateIncoming();
+            } else {
+              requestAnimationFrame(activateIncoming);
+            }
+
+            state.index = nextIndex;
+            state.activeVideo = incoming;
+            state.inactiveVideo = outgoing;
+          };
+
+          if (incoming.dataset.cycleSrc === nextSrc) {
+            incoming.currentTime = 0;
+            incoming.play().catch(function (err) {
+              console.warn('Video autoplay blocked:', err);
+            });
+            finalizeSwap();
+            return;
+          }
+
+          incoming.onloadeddata = null;
+          incoming.onloadeddata = function () {
+            incoming.onloadeddata = null;
+            incoming.play().catch(function (err) {
+              console.warn('Video autoplay blocked:', err);
+            });
+            finalizeSwap();
+          };
+
+          incoming.dataset.cycleSrc = nextSrc;
+          incoming.src = nextSrc;
+          incoming.load();
+        }
+
+        primary.addEventListener('ended', playNext);
+        buffer.addEventListener('ended', playNext);
+
+        primary.src = videos[0];
+        primary.load();
+        primary.play().catch(function (err) {
+          console.warn('Video autoplay blocked:', err);
+        });
+      });
+
+      const cycleCards = document.querySelectorAll('.project-card--cycle[data-cycle-images]');
+
+      cycleCards.forEach(function (card) {
+        const media = card.querySelector('.project-media');
+        if (!media) return;
+
+        const sources = card.dataset.cycleImages
+          .split(',')
+          .map(function (src) { return src.trim(); })
+          .filter(Boolean);
+        if (sources.length < 2) return;
+
+        const intervalAttr = parseInt(card.dataset.cycleInterval, 10);
+        const delay = Number.isFinite(intervalAttr) && intervalAttr > 0 ? intervalAttr : 4000;
+
+        const primary = media.querySelector('img');
+        if (!primary) return;
+
+        const primarySrc = primary.getAttribute('src');
+        primary.classList.add('cycle-img', 'is-active', 'is-foreground');
+        primary.decoding = 'async';
+        primary.dataset.cycleSrc = primarySrc;
+
+        const buffer = document.createElement('img');
+        buffer.className = 'cycle-img';
+        buffer.alt = primary.alt;
+        buffer.decoding = 'async';
+        buffer.setAttribute('aria-hidden', 'true');
+        media.appendChild(buffer);
+
+        const fadeDuration = getFadeDurationMs(primary);
+
+        const state = {
+          activeImg: primary,
+          inactiveImg: buffer,
+          index: Math.max(
+            sources.findIndex(function (src) { return src === primarySrc; }),
+            0
+          ),
+          pendingFade: null
+        };
+
+        setInterval(function () {
+          const nextIndex = (state.index + 1) % sources.length;
+          const nextSrc = sources[nextIndex];
+          const incoming = state.inactiveImg;
+          const outgoing = state.activeImg;
+
+          const finalizeSwap = function () {
+            if (state.pendingFade) {
+              window.clearTimeout(state.pendingFade);
+              state.pendingFade = null;
+            }
+
+            incoming.classList.remove('is-active');
+            incoming.classList.add('is-foreground');
+            outgoing.classList.remove('is-foreground');
+
+            const activateIncoming = function () {
+              incoming.classList.add('is-active');
+
+              if (document.hidden) {
+                outgoing.classList.remove('is-active');
+                state.pendingFade = null;
+              } else {
+                state.pendingFade = window.setTimeout(function () {
+                  outgoing.classList.remove('is-active');
+                  state.pendingFade = null;
+                }, fadeDuration);
+              }
+            };
+
+            if (document.hidden) {
+              activateIncoming();
+            } else {
+              requestAnimationFrame(activateIncoming);
+            }
+
+            state.index = nextIndex;
+            state.activeImg = incoming;
+            state.inactiveImg = outgoing;
+          };
+
+          if (incoming.dataset.cycleSrc === nextSrc) {
+            finalizeSwap();
+            return;
+          }
+
+          incoming.onload = null;
+          incoming.onload = function () {
+            incoming.onload = null;
+            finalizeSwap();
+          };
+
+          incoming.dataset.cycleSrc = nextSrc;
+          incoming.src = nextSrc;
+
+          if (incoming.complete) {
+            incoming.onload = null;
+            finalizeSwap();
+          }
+        }, delay);
+      });
+
+      function parseTimeValue(value) {
+        if (!value) return 0;
+        const trimmed = value.trim();
+        if (trimmed.endsWith('ms')) return parseFloat(trimmed);
+        if (trimmed.endsWith('s')) return parseFloat(trimmed) * 1000;
+        const numeric = parseFloat(trimmed);
+        return Number.isFinite(numeric) ? numeric * 1000 : 0;
+      }
+
+      function getFadeDurationMs(element) {
+        const style = window.getComputedStyle(element);
+        const durations = style.transitionDuration.split(',').map(parseTimeValue);
+        const delays = style.transitionDelay.split(',').map(parseTimeValue);
+        let max = 0;
+        durations.forEach(function (duration, index) {
+          const delay = delays[index] !== undefined ? delays[index] : (delays.length ? delays[delays.length - 1] : 0);
+          max = Math.max(max, duration + delay);
+        });
+        return max || 800;
+      }
+
+      // Mobile / compact layout tap-to-expand (matches CSS @media max-width:1200px)
+      const mobileBreakpoint = 1200;
+      const projectCards = document.querySelectorAll('.project-card');
+
+      function isMobileViewport() { return window.innerWidth <= mobileBreakpoint; }
+      function collapseAllExcept(card) {
+        projectCards.forEach(c => { if (c !== card) { c.classList.remove('is-expanded'); c.setAttribute('aria-expanded', 'false'); } });
+      }
+
+      // Determine if a card is expandable (any clamped <p> is truncated)
+      function assessExpandability(card) {
+        // Remove marker first
+        card.classList.remove('is-expandable');
+        if (card.classList.contains('is-expanded')) return; // Only evaluate collapsed state
+        const paragraphs = card.querySelectorAll('.project-info p');
+        for (const p of paragraphs) {
+          const style = window.getComputedStyle(p);
+          const clamp = style.getPropertyValue('-webkit-line-clamp');
+          if (clamp && clamp !== 'none') {
+            // If actual content height exceeds visible height => truncated
+            if (p.scrollHeight > p.clientHeight + 2) {
+              card.classList.add('is-expandable');
+              return;
+            }
+          }
+        }
+      }
+
+      projectCards.forEach(card => {
+        if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-expanded', 'false');
+
+        function toggleExpand() {
+          if (!card.classList.contains('is-expandable')) return;
+          const info = card.querySelector('.project-info');
+          if (!info) return;
+          const expanding = !card.classList.contains('is-expanded');
+          if (expanding) collapseAllExcept(card);
+
+          // In mobile view (grid layout), let CSS handle the transition
+          if (isMobileViewport()) {
+            if (expanding) {
+              card.classList.add('is-expanded');
+              card.setAttribute('aria-expanded', 'true');
+            } else {
+              card.classList.remove('is-expanded');
+              card.setAttribute('aria-expanded', 'false');
+              // Reassess after CSS transition completes
+              setTimeout(() => assessExpandability(card), 450);
+            }
+            return;
+          }
+
+          // Desktop: Height animation for smooth expand/collapse
+          const startHeight = info.getBoundingClientRect().height;
+          if (expanding) {
+            card.classList.add('is-expanded');
+            card.setAttribute('aria-expanded', 'true');
+          } else {
+            card.classList.remove('is-expanded');
+            card.setAttribute('aria-expanded', 'false');
+          }
+          const endHeight = info.scrollHeight;
+          // If height doesn't actually change, skip animation
+          if (Math.abs(endHeight - startHeight) < 4) return;
+          info.style.height = startHeight + 'px';
+          info.style.overflow = 'hidden';
+          // Force reflow
+          info.offsetHeight;
+          info.style.transition = 'height 0.45s cubic-bezier(.25,.8,.25,1)';
+          info.style.height = endHeight + 'px';
+          function onEnd(e) {
+            if (e.propertyName !== 'height') return;
+            info.style.height = '';
+            info.style.transition = '';
+            info.style.overflow = '';
+            info.removeEventListener('transitionend', onEnd);
+            // After collapse, reassess expandability
+            if (!card.classList.contains('is-expanded')) assessExpandability(card);
+          }
+          info.addEventListener('transitionend', onEnd);
+        }
+
+        card.addEventListener('click', e => {
+          if (e.target.closest('a')) return; // Skip if clicking a link inside
+          toggleExpand();
+        });
+        card.addEventListener('keydown', e => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleExpand();
+          }
+        });
+
+        // Initial assessment (cards start collapsed)
+        assessExpandability(card);
+      });
+
+      window.addEventListener('resize', () => {
+        if (!isMobileViewport()) {
+          projectCards.forEach(c => {
+            const info = c.querySelector('.project-info');
+            c.classList.remove('is-expanded');
+            c.setAttribute('aria-expanded', 'false');
+            if (info) { info.style.height = 'auto'; }
+            assessExpandability(c);
+          });
+        }
+      });
+    });
+  </script>
+
+  <div id="toast"><i class="fa-solid fa-check-circle"></i> Email copied to clipboard!</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const emailLink = document.getElementById('email-link');
+      const toast = document.getElementById('toast');
+
+      if (emailLink) {
+        emailLink.addEventListener('click', (e) => {
+          // We don't preventDefault() so the mailto: still tries to open
+          // But we also copy to clipboard as a fallback/convenience
+          const email = 'ale.gobbetti.work@gmail.com';
+          navigator.clipboard.writeText(email).then(() => {
+            showToast();
+          }).catch(err => {
+            console.error('Failed to copy email: ', err);
+          });
+        });
+      }
+
+      function showToast() {
+        toast.classList.add("show");
+        setTimeout(function () { toast.classList.remove("show"); }, 3000);
+      }
+    });
+  </script>
+</body>
+
+</html>
