@@ -6,13 +6,12 @@
 }
 
 :root {
-    /* Premium Light Theme */
     --bg: #f8fafc;
     --surface: #ffffff;
     --surface-rgb: 255, 255, 255;
     --muted: #64748b;
     --text: #0f172a;
-    --accent: #2563eb; /* T-shirt Blue */
+    --accent: #2563eb;
     --accent-rgb: 37, 99, 235;
     --border: #e2e8f0;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -22,7 +21,7 @@
     --card-border: rgba(226, 232, 240, 0.8);
     
     /* Badge theme (light) */
-    --badge-accent-bg: rgba(79, 70, 229, 0.1);
+    --badge-accent-bg: rgba(205, 204, 231, 0.609);
     --badge-accent-border: rgba(79, 70, 229, 0.2);
     --badge-accent-text: var(--accent);
     --badge-grade-bg: rgba(245, 158, 11, 0.1);
@@ -31,7 +30,6 @@
 }
 
 :root.dark-mode {
-    /* Premium Dark Theme */
     --bg: #0f172a; /* Slate 900 */
     --surface: #1e293b; /* Slate 800 */
     --surface-rgb: 30, 41, 59;
@@ -45,42 +43,19 @@
     --card-surface: rgba(30, 41, 59, 0.7);
     --card-border: rgba(148, 163, 184, 0.1);
     
-    /* Badge theme (dark) */
-    --badge-accent-bg: rgba(77, 171, 247, 0.15);
-    --badge-accent-border: rgba(77, 171, 247, 0.3);
+    /* Badge theme (dark) - Solid High Contrast */
+    --badge-accent-bg: rgba(77, 171, 247, 0.25);
+    --badge-accent-border: rgba(77, 171, 247, 0.5);
     --badge-accent-text: var(--accent);
-    --badge-grade-bg: rgba(251, 191, 36, 0.15);
-    --badge-grade-border: rgba(251, 191, 36, 0.3);
-    --badge-grade-text: #fde68a;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root:not(.light-mode) {
-        --bg: #0f172a;
-        --surface: #1e293b;
-        --surface-rgb: 30, 41, 59;
-        --muted: #94a3b8;
-        --text: #f8fafc;
-        --accent: #818cf8;
-        --accent-rgb: 129, 140, 248;
-        --border: #334155;
-        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.18);
-        --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.25);
-        --card-surface: rgba(30, 41, 59, 0.7);
-        --card-border: rgba(148, 163, 184, 0.1);
-        --badge-accent-bg: rgba(129, 140, 248, 0.15);
-        --badge-accent-border: rgba(129, 140, 248, 0.3);
-        --badge-accent-text: var(--accent);
-        --badge-grade-bg: rgba(251, 191, 36, 0.15);
-        --badge-grade-border: rgba(251, 191, 36, 0.3);
-        --badge-grade-text: #fde68a;
-    }
-}
+
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: var(--text);
     background: var(--bg);
+    font-size: clamp(0.85rem, 0.5vw + 0.75rem, 1rem); 
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -142,6 +117,7 @@ header {
 header h1 {
     font-variant: small-caps;
     font-size: 2.2rem;
+    font-size: clamp(1.75rem, 4vw, 2.2rem);
     font-weight: 800;
     max-width: var(--max-width);
     margin: 0 auto;
@@ -156,7 +132,10 @@ header h1 {
 #theme-toggle {
     position: fixed;
     left: 24px;
-    bottom: 24px;
+    bottom: calc(24px + env(safe-area-inset-bottom, 20px));
+    /* Moved to right for better mobile reachability */
+    right: 24px;
+    left: auto;
     transform: none;
     background: rgba(var(--surface-rgb), 1);
     border: 1px solid var(--border);
@@ -381,6 +360,7 @@ aside img {
 /* Section titles */
 .content h2 {
     font-size: 2.2rem;
+    font-size: clamp(1.75rem, 4vw, 2.2rem);
     margin-top: 40px;
     margin-bottom: 20px;
     border-bottom: none;
@@ -478,6 +458,7 @@ aside img {
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* align first line to top */
+    /* position: relative; Removed valid anchor for absolute date */
 }
 
 .project-header {
@@ -487,7 +468,7 @@ aside img {
     align-items: flex-start;
     margin-bottom: 4px;
     gap: 15px;
-    position: relative;
+    /* position: relative; Removed to allow date to anchor to project-info */
 }
 
 .project-info h3 {
@@ -538,12 +519,26 @@ aside img {
 .project-date {
     font-style: italic;
     font-size: 0.85rem;
-    color: var(--accent);
+    color: var(--muted); /* Muted color to match footer style */
     font-weight: 500;
     opacity: 0.8;
     white-space: nowrap;
-    flex-shrink: 0;
-    text-align: right;
+    margin-left: auto; /* Push to right if in flex container */
+    
+    /* Removed absolute positioning */
+}
+
+/* Footer container for Link + Date */
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* Push to bottom of flex column */
+    padding-top: 12px;
+}
+.project-footer a {
+    margin-top: 0; /* Reset margin since it's in flex container */
 }
 
 .project-info p {
@@ -595,6 +590,22 @@ aside img {
 .project-card.is-expandable:not(.is-expanded):hover::after,
 .project-card.is-expandable:not(.is-expanded):focus-visible::after { opacity: 0.75; }
 .project-card.is-expandable:not(.is-expanded):active::after { opacity: 0.9; }
+
+/* Collapse label for expanded cards */
+.project-card.is-expanded::after {
+    content: 'Tap to collapse';
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    font-size: 0.65rem;
+    color: var(--muted);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+.project-card.is-expanded:hover::after,
+.project-card.is-expanded:focus-visible::after { opacity: 0.75; }
+.project-card.is-expanded:active::after { opacity: 0.9; }
 
 .project-info a {
     color: var(--accent);
@@ -745,9 +756,16 @@ aside img {
     transition: opacity 0.25s ease;
 }
 
+/* Dark mode specific overrides for Grade Badge */
+:root.dark-mode .grade-badge {
+    opacity: 0.95;
+    background: #f7c26791; /* Solid Yellow 300 */
+    color: #3f2800; /* Dark brown text */
+}
+
 .project-card--award:hover .award-badge,
 .project-card--grade:hover .grade-badge {
-    opacity: 0.95;
+    opacity: 1;
 }
 
 .project-card:hover .award-badge {
@@ -810,8 +828,9 @@ aside img {
     .project-media.fit-contain .cycle-img { object-fit: contain; padding: 8%; }
     .project-info {
         padding: 10px 14px 12px 14px;
-        display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
+
         gap: 4px;
         /* Show all paragraphs; individual <p> elements handle their own clamping */
         overflow: visible;
@@ -839,7 +858,10 @@ aside img {
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
-    .project-date { font-size: 0.7rem; opacity: 0.7; }
+    .project-date { 
+        font-size: 0.7rem; 
+        opacity: 0.7;
+    }
     .project-info p {
         font-size: 0.82rem;
         line-height: 1.3;
@@ -917,7 +939,6 @@ aside img {
     align-items: center;
     overflow: visible; /* ensure icon reveal remains unaffected */
 }
-
 /* Narrow layout: responsive sidebar card */
 @media (max-width: 850px) {
     main {
@@ -932,7 +953,7 @@ aside img {
         align-items: center;
         text-align: center;
         gap: 18px;
-        padding: 28px 24px 32px;
+        padding: 24px 8px 28px; /* Ultra-tight padding (12px -> 8px) */
         margin-bottom: 32px;
         border-radius: 28px;
         border: 1px solid var(--border);
@@ -945,13 +966,14 @@ aside img {
         box-shadow: 0 25px 60px rgba(0, 6, 20, 0.65);
     }
     aside img {
-        width: clamp(170px, 55vw, 240px);
+        width: clamp(170px, 55vw, 220px);
         margin: 0;
         box-shadow: 0 12px 30px rgba(17, 24, 39, 0.22);
     }
     .profile-card-content {
         align-items: center;
         text-align: center;
+        width: 100%;
     }
     .side-name {
         margin: 0;
@@ -960,65 +982,132 @@ aside img {
         width: 100%;
         margin-top: 6px;
     }
+    
+    /* CLEAN GRID LAYOUT: 2 columns, minimal spacing */
     .contact-list {
         width: 100%;
-        align-items: center;
-        gap: 6px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 50% - 50% split */
+        column-gap: 0px; /* Zero gap between columns to maximize internal space */
+        row-gap: 6px;    /* Tighter row spacing */
+        align-items: start;
     }
     .contact-item {
-        width: min(360px, 100%);
+        width: 100%;
+        display: flex;
+        justify-content: flex-start; 
+        overflow: hidden; /* Prevent spillover */
+    }
+       
+    .contact-item:nth-child(odd) {
+         justify-content: flex-end; 
+         padding-right: 2px;
+    }
+    .contact-item:nth-child(even) {
+         padding-left: 2px;
+    }
+
+    /* Tweaking the row style for compact fit */
+    .contact-row {
+        justify-content: flex-start;
+        text-align: left;
+        padding: 4px 0; 
+        /* Remove mobile-specific backgrounds/borders to match desktop */
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        gap: 5px; 
+        width: fit-content; 
+        max-width: 100%; 
+    }
+    .icon {
+        width: 20px; /* Smaller icons (24px -> 20px) */
+        height: 20px;
+        line-height: 20px;
+    }
+    .icon i {
+        font-size: 10px; /* Smaller icon glyph */
+    }
+    .contact-text {
+        font-size: 0.85rem; /* Slightly smaller text (0.9 -> 0.85) to fit */
+        white-space: nowrap; /* Force single line if possible */
     }
 }
 
-/* Medium-small screens: keep photo and info side-by-side */
+/* Medium-small screens (Tablet/Landscape): Restore breathing room */
 @media (max-width: 850px) and (min-width: 560px) {
     aside {
         flex-direction: row;
         align-items: center;
         text-align: left;
+        padding: 24px 24px; /* Slightly tighter padding (28px 32px -> 24px 24px) */
     }
     aside img {
-        flex: 0 0 clamp(180px, 32vw, 240px);
+        /* Reduce image size to give more room to text */
+        flex: 0 0 clamp(140px, 25vw, 180px); 
     }
     .profile-card-content {
         align-items: flex-start;
         text-align: left;
+        min-width: 0; /* Important: allow flex child to shrink properly */
     }
     .side-name {
         text-align: left;
     }
+    
+    /* Relax grid to auto-fit spaces, but keep tight enough for text */
     .contact-list {
-        align-items: stretch;
+        column-gap: 16px; /* Reduced breathing room (30px -> 16px) to prevent cutting */
+        row-gap: 12px;
     }
+    
+    /* Reset alignment for cleanliness */
     .contact-item {
-        width: 100%;
+        justify-content: flex-start !important; 
     }
+    .contact-item:nth-child(odd) {
+         justify-content: flex-start !important;
+         padding-right: 0;
+    }
+    .contact-item:nth-child(even) {
+         padding-left: 0;
+    }
+    
+    /* Restore normal icon/text sizes, but slightly smaller than desktop to be safe */
+    .icon {
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+    }
+    .icon i { font-size: 12px; }
+    .contact-text { font-size: 0.88rem; }
+    .contact-row { gap: 8px; }
 }
 
-/* Extra-small screens: stack avatar above contacts */
+/* Extra-small screens: Tweaks for very small devices */
 @media (max-width: 559px) {
     aside {
-        padding: 24px 18px 28px;
+        padding: 24px 14px 28px;
     }
     aside img {
-        width: min(68vw, 220px);
+        width: min(40vw, 150px);
     }
     .profile-card-content {
         align-items: center;
         text-align: center;
         gap: 18px;
     }
+    /* Ensure grid holds up */
     .contact-list {
-        width: 100%;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
+        grid-template-columns: 1fr 1fr;
     }
+    /* Force justify-center if we want them centered in their halves? 
+       Let's try to center the grid content relative to the screen. */
     .contact-item {
-        width: calc(50% - 8px);
-        min-width: 150px;
+         justify-content: center; /* Center items in their grid cells */
     }
+    .contact-item:nth-child(odd) { justify-content: flex-start; padding-left: 10%; }
+    .contact-item:nth-child(even) { justify-content: flex-start; padding-left: 5%; }
     .contact-row {
         justify-content: flex-start;
         text-align: left;
@@ -1027,6 +1116,50 @@ aside img {
         background: transparent;
         box-shadow: none;
         gap: 6px;
+    }
+}
+
+/* Stacked card layout for mobile (image top, content bottom) */
+@media (max-width: 600px) {
+    .project-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+    }
+    .project-media {
+        width: 100%;
+        aspect-ratio: 2.5 / 1;
+        border-radius: 12px 12px 0 0;
+    }
+    .project-info {
+        padding: 16px 20px;
+        grid-column: 1;
+        grid-row: 2;
+    }
+    /* Allow more lines of text on mobile stacked view since we have vertical space */
+    .project-info p, 
+    .project-info .project-subtitle {
+        -webkit-line-clamp: 4;
+        line-clamp: 4;
+    }
+    
+    /* Date at the bottom right, aligned with the link */
+    /* Mobile Footer adjustments */
+    .project-footer {
+        padding-top: 8px;
+    }
+    
+    .project-header {
+        display: block; 
+        margin-bottom: 4px;
+    }
+
+    .project-date {
+        font-size: 0.78rem;
+    }
+
+    .dark-mode .project-date {
+        color: var(--muted);
     }
 }
 
