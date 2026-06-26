@@ -283,6 +283,93 @@
             individual and collaborative work demonstrating a range of skills and technologies. For most of the
             collaborative projects, I acted as team leader.</p>
 
+          <article class="project-card">
+            <div class="project-media" style="background-color: #ffffff; position: relative;">
+              <img class="is-active" src="media/io-chess.svg" alt="io-chess Engine Neural Network Architecture"
+                loading="lazy"
+                style="position: absolute; inset: 0; margin: auto; width: 100%; height: 100%; max-width: 160px; max-height: 160px; padding: 16px; box-sizing: border-box; object-fit: contain; background: transparent; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.12));">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>io-chess Engine</h3>
+              </div>
+              <p class="project-subtitle"><strong>Custom C++20 Chess Engine & Neural Network Pipeline</strong></p>
+              <p>A C++20 UCI chess engine written from scratch. It consists of a custom alpha-beta search algorithm, a
+                neural network architecture, and a large-scale data pipeline for training.<br><br>
+                <strong>Search:</strong> Negamax search with Principal Variation Search (PVS), Late Move Reductions
+                (LMR), and Null-Move Pruning. Move ordering uses Static Exchange Evaluation (SEE), killer moves, and
+                history heuristics. Supports multithreading via lock-free Lazy SMP on a shared transposition table, plus
+                Syzygy endgame tablebase probing.<br><br>
+                <strong>Evaluation:</strong> Natively-compiled, SIMD-optimized Factorized Mixture-of-Experts (MoE)
+                neural network. Uses a gating router to dynamically select the top 2 of 4 expert networks (Tactical,
+                Strategical, Major/Minor Endgame) per position. Features a double-accumulator for fast incremental
+                updates during search. No external ML runtimes needed for inference.<br><br>
+                <strong>Training & Data:</strong> Trained on 314,602,912 positions. Built a high-throughput C++ pipeline
+                parsing raw FENs into packed binary datasets, extracting dense spatial planes (piece mobility, Chebyshev
+                king-distances, absolute pins, outposts, hanging pieces) for O(1) memory-mapped loading. Trained in
+                PyTorch using a 3-phase curriculum (backbone pre-training, algorithmically routed expert specialization,
+                joint fine-tuning) to prevent expert collapse.
+              </p>
+              <div class="project-footer">
+                <div style="display: flex; gap: 15px;">
+                  <a href="https://github.com/Alessandro-Gobbetti/io-chess-engine" target="_blank"
+                    rel="noopener noreferrer">GitHub →</a>
+                  <a href="https://lichess.org/@/io-bot" target="_blank" rel="noopener noreferrer">Play on Lichess →</a>
+                </div>
+                <p class="project-date">2026</p>
+              </div>
+            </div>
+          </article>
+
+          <style>
+            #io-chess-web-card .cycle-img {
+              object-fit: unset !important;
+              height: auto !important;
+              bottom: auto !important;
+              border-bottom: 2000px solid #121212 !important;
+              background-color: #121212 !important;
+            }
+          </style>
+          <article id="io-chess-web-card" class="project-card project-card--cycle"
+            data-cycle-images="media/www.io-chess.com_home_fs.png, media/www.io-chess.com_engine_fs.png, media/www.io-chess.com_analysis_fs.png, media/www.io-chess.com_db_fs.png"
+            data-cycle-interval="3500">
+            <div class="project-media" style="background-color: #121212;">
+              <img class="is-active cycle-img" src="media/www.io-chess.com_home_fs.png"
+                alt="io-chess Web Platform Interface" loading="lazy">
+            </div>
+            <div class="project-info">
+              <div class="project-header">
+                <h3>io-chess Web Platform</h3>
+              </div>
+              <p class="project-subtitle"><strong>High-Performance WebAssembly Frontend & Analysis Dashboard</strong>
+              </p>
+              <p>The interactive frontend and ecosystem for the io-chess engine, built with Vue 3 and Vite. The C++
+                engine is cross-compiled to WebAssembly (WASM) via Emscripten to run entirely client-side, with neural
+                weights shipped as a native bundle for instant local inference.<br><br>
+                The app uses Cross-Origin Isolation and SharedArrayBuffer to enable hardware multithreading via Web
+                Workers (pthreads) for near-native engine performance in the browser. The UI features an interactive
+                Analysis Dashboard with evaluation graphs, engine lines, and dynamic visualizers that render the
+                engine's internal MoE state in real-time.<br><br>
+
+                The website allows users to play chess against the engine, explore statistics and analyze past games,
+                and learn how the engine is implemented. Additionally, users can chat with an AI assistant (working
+                thanks to the groq api) that explains specific moves and positions based on real positional analysis.
+                For game management, it connects to a Turso edge database for cloud archiving.<br><br>
+
+                The performance of the engine really depends on the hardaware running it, for a fair comparison, there
+                is also a lichess bot (<a href="https://lichess.org/@/io-bot" target="_blank"
+                  rel="noopener noreferrer">@io-bot</a>) that plays rated games against real opponents from an old
+                laptop.</p>
+              <div class="project-footer">
+                <div style="display: flex; gap: 15px;">
+                  <a href="https://www.io-chess.com/" target="_blank" rel="noopener noreferrer">Website →</a>
+                  <a href="https://lichess.org/@/io-bot" target="_blank" rel="noopener noreferrer">Play on Lichess →</a>
+                </div>
+                <p class="project-date">2026</p>
+              </div>
+            </div>
+          </article>
+
           <article class="project-card project-card--cycle project-card--grade project-card--award"
             data-cycle-images="media/master_tsne.png, media/master_obj.png, media/master_mtl.png"
             data-cycle-interval="5000">
